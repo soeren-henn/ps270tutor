@@ -120,7 +120,7 @@ grade_this_code()
 
 ### Repeated sampling using the `infer` package
 
-The `{infer}` package provides tools for doing repeated sampling that is useful when we are learning about sampling. The function `infer::rep_slice_sample()` will sample the data multiple times and bind the samples together with a new column that indicates which replicate the draws are from. For instance, let's take 5 samples of size n=2 from the `gapminder` data. 
+The `infer` package provides tools for doing repeated sampling that is useful when we are learning about sampling. The function `infer::rep_slice_sample()` will sample the data multiple times and bind the samples together with a new column that indicates which replicate the draws are from. For instance, let's take 5 samples of size n=2 from the `gapminder` data. 
 
 ```{r}
 gapminder |>

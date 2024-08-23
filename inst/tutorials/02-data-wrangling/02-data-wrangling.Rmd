@@ -76,7 +76,7 @@ flights
 ```
 
 
-We can use the `filter()` function from the `{dplyr}` package to subset datasets based on observations. For example, if we wanted just the flights on June 25th, we could run:
+We can use the `filter()` function from the `dplyr` package to subset datasets based on observations. For example, if we wanted just the flights on June 25th, we could run:
 
 ```{r}
 flights |> filter(day == 25)
@@ -167,7 +167,7 @@ gradethis::grade_this_code()
 
 ## Summarizing variables
 
-We often would like to get numerical summaries of the variables in our dataset. These might be means, medians, measures of spread, or other ways to summarize a collection of values. The `summarize()` function in `{dplyr}` consists of a number of name-value pairs where the value is some code that summarized a variable and the name is the label we want to give that summary in the resulting data frame. Schematically, it looks like this:
+We often would like to get numerical summaries of the variables in our dataset. These might be means, medians, measures of spread, or other ways to summarize a collection of values. The `summarize()` function in `dplyr` consists of a number of name-value pairs where the value is some code that summarized a variable and the name is the label we want to give that summary in the resulting data frame. Schematically, it looks like this:
 
 ```{r, eval = FALSE}
 mydata |> summarize(<name1> = <code1>,

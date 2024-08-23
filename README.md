@@ -1,4 +1,4 @@
-# `{ps270tutor}` Interactive Tutorials for Quantitative Social Science
+# `ps270tutor` Interactive Tutorials for Quantitative Social Science
 
 This package contains [`learnr`](https://rstudio.github.io/learnr/index.html) for [PS 270](https://canvas.wisc.edu/courses/420318) at University of Wisconsin-Madison and is building upon Matthew Blackwell's Gov50 course at Harvard University which is loosely based on [*Quantitative Social Science: An Introduction*](http://qss.princeton.press/) by [Kosuke Imai](https://imai.fas.harvard.edu/) from Princeton University Press. To install this package, first install its dependencies:
 

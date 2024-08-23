@@ -465,7 +465,7 @@ ggplot(data = <data>,
 
 ### Gapminder data
 
-To learn how to do some basic visualizations, we'll use the gapminder data from the `{gapminder}` package (if you want to follow along in RStudio, you should use the `library(gapminder)` command to load the data). The data consists of rows of country-years and various social and economic indicators for those countries in those years. We've already filtered this data to only have the measurements from 2007 to make the visualization a little easier. 
+To learn how to do some basic visualizations, we'll use the gapminder data from the `gapminder` package (if you want to follow along in RStudio, you should use the `library(gapminder)` command to load the data). The data consists of rows of country-years and various social and economic indicators for those countries in those years. We've already filtered this data to only have the measurements from 2007 to make the visualization a little easier. 
 
 ```{r showgapminder}
 gapminder
