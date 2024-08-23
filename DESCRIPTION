@@ -1,13 +1,13 @@
-Package: gov50tutor
+Package: ps270tutor
 Type: Package
 Version: 0.1.0.9003
-Title: Learnr tutorials for Government 50 at Harvard University
-Description: A series of 'learnr' tutorials on basic data analysis to help students in Gov 50 at Harvard.
+Title: Learnr tutorials for PS270 at University of Wisconsin-Madison
+Description: A series of 'learnr' tutorials on basic data analysis to help students in PS270 at UW-M.
 Authors@R:
-  c(person(given = "Matthew",
-           family = "Blackwell",
+  c(person(given = "Soeren",
+           family = "Henn",
            role = c("aut", "cre"),
-           email = "mblackwell@gov.harvard.edu"))
+           email = "sjhenn@wisc.edu"))
 Depends:
   R (>= 3.6.0)
 Imports:
@@ -20,6 +20,6 @@ Imports:
   qss,
   here
 License: GPL-3
-URL: https://github.com/mattblackwell/gov50tutor
-BugReports: https://github.com/mattblackwell/gov50tutor/issues
+URL: https://github.com/soeren-henn/ps270tutor
+BugReports: https://github.com/soeren-henn/ps270tutor/issues
 RoxygenNote: 7.0.2
