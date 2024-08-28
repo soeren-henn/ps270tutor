@@ -1,15 +1,13 @@
 #' @title Tutorial submission functions
 #'
-#' @description
-#' The following function has modified from Colin
-#' Rundel's learnrhash package, available at
-#' https://github.com/rundel/learnrhash. Many thanks to Professor Rundel, who
-#' has developed a fantastic tool for courses that teach R and use the learnr
-#' package.
+#' @description The following function has modified from Colin Rundel's
+#' learnrhash package, available at https://github.com/rundel/learnrhash. Many
+#' thanks to Professor Rundel, who has developed a fantastic tool for courses
+#' that teach R and use the learnr package.
 #'
-#' This note is also modified from Professor Rundel's description: Note that when
-#' including these functions in a learnr Rmd document it is necessary that the
-#' server function, `submission_server()`, be included in an R chunk where
+#' This note is also modified from Professor Rundel's description: Note that
+#' when including these functions in a learnr Rmd document it is necessary that
+#' the server function, `submission_server()`, be included in an R chunk where
 #' `context="server"`. Conversely, any of the ui functions, `*_ui()`, must *not*
 #' be included in an R chunk with a `context`.
 #'
@@ -33,8 +31,8 @@ submission_server <- function(input, output) {
                                 "tutorials",
                                 "tutorial-report.Rmd")
       file.copy(tut_rep_path, tempReport, overwrite = TRUE)
-      
-      
+
+
       # Set up parameters to pass to Rmd document
       objs <- learnr:::get_all_state_objects(session)
       skips <- learnr:::section_skipped_progress_from_state_objects(objs)
@@ -54,7 +52,7 @@ submission_server <- function(input, output) {
                      output = out,
                      student_name = input$name,
                      skipped = length(skips))
-      
+
       ext <- tools::file_ext(file)
       out_format <- switch(ext, pdf = "pdf_document", html = "html_document")
 
@@ -73,7 +71,7 @@ submission_server <- function(input, output) {
       filename = "report.pdf",
       content = build_report
     )
-    
+
     output$download_html <- downloadHandler(
       filename = "report.html",
       content = build_report
