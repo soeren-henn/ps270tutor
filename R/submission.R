@@ -13,6 +13,9 @@
 #' `context="server"`. Conversely, any of the ui functions, `*_ui()`, must *not*
 #' be included in an R chunk with a `context`.
 #'
+#' WARNING: This function requires a global variable, `tut_reptitle` to be
+#' defined containing the title of the output report.
+#'
 #' @rdname submission_functions
 #' @export
 submission_server <- function(input, output) {
