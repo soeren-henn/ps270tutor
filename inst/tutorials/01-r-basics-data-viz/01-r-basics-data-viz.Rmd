@@ -614,10 +614,10 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 ## Submit
 
-```{r context="setup"}
+```{r echo=FALSE, context="setup"}
 gov50tutor::submission_ui
 ```
 
-```{r context="server"}
+```{r echo=FALSE, context="server"}
 gov50tutor::submission_server()
 ```
