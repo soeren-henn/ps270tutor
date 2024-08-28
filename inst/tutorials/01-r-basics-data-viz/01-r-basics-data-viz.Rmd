@@ -1,5 +1,5 @@
 ---
-title: "Gov 50 Tutorial 1: R Basics & Data Visualization"
+title: "PS 270 Tutorial 1: R Basics & Data Visualization"
 tutorial:
   id: "01-r-basics-data-viz"
 output:
@@ -22,7 +22,7 @@ library(learnr)
 library(gapminder)
 library(ggplot2)
 library(dplyr)
-library(gov50tutor)
+library(ps270tutor)
 tutorial_options(exercise.checker = gradethis::grade_learnr)
 # knitr::opts_chunk$set(echo = FALSE)
 tut_reptitle <- "Gov 50 Tutorial 1: Output Report"
@@ -615,9 +615,9 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 ## Submit
 
 ```{r echo=FALSE, context="setup"}
-gov50tutor::submission_ui
+ps270tutor::submission_ui
 ```
 
 ```{r echo=FALSE, context="server"}
-gov50tutor::submission_server()
+ps270tutor::submission_server()
 ```
