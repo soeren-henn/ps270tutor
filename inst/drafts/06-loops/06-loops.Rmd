@@ -1,5 +1,5 @@
 ---
-title: "Gov 50 Tutorial 6: Loops"
+title: "PS 270 Tutorial 6: Loops"
 tutorial:
   id: "06-loops"
 output:
@@ -22,13 +22,13 @@ library(gradethis)
 library(learnr)
 library(ggplot2)
 library(dplyr)
-library(gov50tutor)
+library(ps270tutor)
 library(tidyverse)
-library(gov50data)
+library(ps270data)
 
 tutorial_options(exercise.checker = gradethis::grade_learnr)
 knitr::opts_chunk$set(echo = TRUE)
-tut_reptitle <- "Gov 50 Tutorial 6: Output Report"
+tut_reptitle <- "PS 270 Tutorial 6: Output Report"
 
 library(gapminder)
 ```
@@ -251,9 +251,9 @@ grade_code()
 ## Submit
 
 ```{r context="setup", echo = FALSE}
-gov50tutor::submission_ui
+ps270tutor::submission_ui
 ```
 
 ```{r context="server", echo = FALSE}
-gov50tutor::submission_server()
+ps270tutor::submission_server()
 ```

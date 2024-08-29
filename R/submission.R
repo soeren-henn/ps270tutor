@@ -29,7 +29,7 @@ submission_server <- function(input, output) {
       # case we don't have write permissions to the current working dir (which
       # can happen when deployed).
       tempReport <- file.path(tempdir(), "tutorial-report.Rmd")
-      tut_rep_path <- file.path(path.package("gov50tutor"),
+      tut_rep_path <- file.path(path.package("ps270tutor"),
                                 "tutorials",
                                 "tutorial-report.Rmd")
       file.copy(tut_rep_path, tempReport, overwrite = TRUE)

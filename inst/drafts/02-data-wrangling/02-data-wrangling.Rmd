@@ -1,5 +1,5 @@
 ---
-title: "Gov 50 Tutorial 2: Data Wrangling"
+title: "PS 270 Tutorial 2: Data Wrangling"
 tutorial:
   id: "02-data-wrangling"
 output:
@@ -22,12 +22,12 @@ library(gradethis)
 library(learnr)
 library(ggplot2)
 library(dplyr)
-library(gov50tutor)
+library(ps270tutor)
 library(nycflights13)
 flights <- flights |> filter(month == 6)
 tutorial_options(exercise.checker = gradethis::grade_learnr)
 knitr::opts_chunk$set(echo = TRUE)
-tut_reptitle <- "Gov 50 Tutorial 2: Output Report"
+tut_reptitle <- "PS 270 Tutorial 2: Output Report"
 ```
 
 ## Nesting functions
@@ -328,9 +328,9 @@ gradethis::grade_this_code()
 ## Submit
 
 ```{r context="setup", echo = FALSE}
-gov50tutor::submission_ui
+ps270tutor::submission_ui
 ```
 
 ```{r context="server", echo = FALSE}
-gov50tutor::submission_server()
+ps270tutor::submission_server()
 ```
