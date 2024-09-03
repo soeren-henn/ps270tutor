@@ -331,7 +331,7 @@ A data frame is an object in R that is basically like a spreadsheet with some nu
 - `dim(mydata)` - returns a vector of the number of rows and the number of columns (the dimension of the data).
 - `summary(mydata)` - provides a summary of each variable in the data.
 
-These are super useful functions. Let's use some of these on a data frame, `UNpop`, which has  estimates of world population (in thousands) in ten year intervals. 
+These are super useful functions. Let's use some of these on a data frame, `UNpop`, which has been loaded into this tutorial with estimates of world population (in thousands) in ten year intervals. 
 
 #### Exercise
 
