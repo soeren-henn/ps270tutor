@@ -157,9 +157,9 @@ grade_this_code("You just analyzed an experiment! Way to go!")
 ### Complex relationals
 
 
-In this exercise, you have the ages of a sample of 15 people, stored in the `ages` vector. We can use these relational operators to create a logical vector which indicates which ages fall within a specific range. In particular, we can find out which respondents are college-aged (18-22).
+In this exercise, we'll work with the ages of a sample of 11 people, stored in the `ages` vector. We can use relational operators to create a logical vector (that is, a vector whose values are `TRUE` or `FALSE`).  In this case, those values will indicate which ages fall within a specific range: in particular, we'll show whether each respondent is college-aged (18-22) or not.
 
-We will also perform algebra on logical vectors. When we do this, all `TRUE` values are converted to `1` and all `FALSE` values are converted. For instance, we can use the `sum()` function on a logical vector to obtain the number of `TRUE` values there are:
+We will also perform some algebra on logical vectors. When we do this, all `TRUE` values will be converted to `1` and all `FALSE` values will be converted to `0`. For instance, we can use the `sum()` function on a logical vector to obtain the number of `TRUE` values there are:
 
 ```{r}
 sum(c(TRUE, FALSE, TRUE, FALSE))
