@@ -114,7 +114,7 @@ submission_ui <- shiny::div(
   "When you have completed this tutorial, follow these steps:",
   shiny::tags$br(),
   shiny::tags$ol(
-    shiny::tags$li("Enter your name into the text box below.."),
+    shiny::tags$li("Enter your name into the text box below."),
     shiny::tags$li("Click the Download button next to generate a report PDF with a summary of your work. "),
     shiny::tags$li("Upload this file to the appropriate assignment on Gradescope.")),
   shiny::textInput("name", "Your Name"),

@@ -175,7 +175,7 @@ mydata |> summarize(<name1> = <code1>,
                     ...)
 ```
 
-So, if we wanted to get the mean (via the `mean()` function) and standard deviation (via the `sd()` function, which is a measure of spread, it's not vital that we know exactly what it means right now) for the departure delay, we could do
+So, if we wanted to get the mean (via the `mean()` function) and standard deviation (via the `sd()` function, which is a measure of spread -- it's not vital that we know exactly what it means right now) for the departure delay, we could do
 
 ```{r}
 flights |> summarize(delay_mean = mean(dep_delay),
@@ -238,7 +238,7 @@ flights |>
 
 ### Exercise
 
-Return the average depart and arrival delay and the total number of flights for each airline. 
+Return the average departure and arrival delay and the total number of flights for each airline. 
 
 ```{r group-flights, exercise = TRUE}
 flights |>
