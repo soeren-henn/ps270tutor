@@ -11,6 +11,12 @@ inst/tutorials/autograder/*.json
 inst/tutorials/autograder/*.zip
 inst/tutorials/autograder/*.pdf
 
+inst/drafts/*/*_files
+inst/drafts/*/*.html
+inst/drafts/autograder/*.json
+inst/drafts/autograder/*.zip
+inst/drafts/autograder/*.pdf
+
 # deployment output
 rsconnect/
 
