@@ -1,7 +1,8 @@
 #######################################################
-# gov50tutor Tutorial Autograder
-# Fall 2022
-# Author: Matthew Blackwell
+# ps2700tutor Tutorial Autograder
+# Fall 2024
+# Author: Soeren Henn
+# Based on code by Matthew Blackwell
 # Adapted from R assignment for Gradescope
 #   example by Michael Guerzhoy guerzhoy@princeton.edu.
 #   with additions from Tyler Simko
