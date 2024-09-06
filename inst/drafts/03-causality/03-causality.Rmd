@@ -61,9 +61,9 @@ resume
 ### Creating a cross tab
 
 
-To help you analyze this data, you can use a cross tabulation. Cross tabulation (or contingency table) is a table that quickly summarizes categorical data. For instance, in the resume data, we have a `gender` variable that tells us whether or not the fictitious resume had a name typically associated with a man or a woman (we've change the name of the variable from the textbook). 
+To help you analyze this data, you can use a cross tabulation. A cross tabulation (or contingency table) is a table that quickly summarizes categorical data. For instance, in the resume data, we have a `gender` variable that tells us whether or not the fictitious resume had a name typically associated with a man or a woman (we've changed the name of the variable from the textbook). 
 
-To create a cross tab, we need to modify the output of a `group_by`/`summarize` combination where each row corresponds to a combination of the grouping variables. For a cross-tab, we will have a table where rows correspond to one grouping variable and columns refer to the other. To do this, we'll need to use the `pivot_wider` function, which takes data that is "long" (each row is a combination of values) and converts to "wide" (where columns also correspond to one of the variables). Suppose we had this data:
+To create a cross tab, we need to modify the output of a `group_by`/`summarize` combination where each row corresponds to a combination of the grouping variables. For a cross tab, we will have a table where rows correspond to one grouping variable and columns refer to the other. To do this, we'll need to use the `pivot_wider` function, which takes data that is "long" (each row is a combination of values) and converts to "wide" (where columns also correspond to one of the variables). Suppose we had this data:
 
 ```{r}
 df <- tibble(
@@ -85,14 +85,19 @@ df |>
   )
 ```
 
-`names_from` tells us which variable contains the grouping variable we'd like to move to the columns and `values_from` tells us what values should go into the cells in the pivoted table. You can see that because the original data didn't have row with `id` equal to `B` and `name` equal to `z`, we get a missing value in that cell. 
+`names_from` tells us which variable contains the grouping variable we'd like to move to the columns and `values_from` tells us what values should go into the cells in the pivoted table. Notice that because the original data didn't have a row with `id` equal to `B` and `name` equal to `z`, we get a missing value in that cell. 
 
 ### Exercise
 
-- Using the `count` and `pivot_wider` functions, create a cross tab of the `gender` and `call` variables in the resume data. 
-- We also want to use the `pivot_wider` function to reshape the table. To do so, let's draw the names for the new columns from variable `call` and values from `n`.
+Using the `count` and `pivot_wider` functions, create a cross tab of the `gender` and `call` variables in the resume data:
+
+- First we want to use the `count` function to make a long table with the number of people with each combination of `gender` and `call`.  (If you get confused, it might help to select all the code up to the end of the `count()` function and press "Run Code"!)
+- Next we want to use the `pivot_wider` function to reshape the table. To do so, let's draw the names for the new columns from variable `call` and values from `n`.
 
 ```{r table, exercise = TRUE}
+resume |>
+  count() |>
+  pivot_wider()
 ```
 
 ```{r table-solution}
@@ -116,8 +121,8 @@ Now let's calculate an average treatment effect. You can use `filter` to create 
 Use the following chain of manipulations combined by the pipe:
 
 - Use `group_by` and `summarize` to calculate the mean of the `call` variable by both `race` and `gender`. Call the variable containing the mean `call_mean`.
-- Pivot the resulting tibble to have `race` on the columns. 
-- Create a new variable called `ate` (average treatment effect) that is the difference between the call back means for black and white applications (these columns are called `black` and `white` after pivoting). 
+- Pivot the resulting tibble to have `race` in the column names. 
+- Create a new variable called `ate` (average treatment effect) that is the difference between the callback means for black and white applications (these columns are called `black` and `white` after pivoting -- subtract `white` from `black`). 
 
 
 
@@ -152,9 +157,9 @@ grade_this_code("You just analyzed an experiment! Way to go!")
 ### Complex relationals
 
 
-In this exercise, you have the ages of a sample of 15 people, stored in the `ages` vector. We can use these relational operators to create a logical vector which indicates which ages fall within a specific range. In particular, we can find out which respondents are college-aged (18-22).
+In this exercise, we'll work with the ages of a sample of 11 people, stored in the `ages` vector. We can use relational operators to create a logical vector (that is, a vector whose values are `TRUE` or `FALSE`).  In this case, those values will indicate which ages fall within a specific range: in particular, we'll show whether each respondent is college-aged (18-22) or not.
 
-We will also perform algebra on logical vectors. When we do this, all `TRUE` values are converted to `1` and all `FALSE` values are converted. For instance, we can use the `sum()` function on a logical vector to obtain the number of `TRUE` values there are:
+We will also perform some algebra on logical vectors. When we do this, all `TRUE` values will be converted to `1` and all `FALSE` values will be converted to `0`. For instance, we can use the `sum()` function on a logical vector to obtain the number of `TRUE` values there are:
 
 ```{r}
 sum(c(TRUE, FALSE, TRUE, FALSE))
@@ -162,7 +167,7 @@ sum(c(TRUE, FALSE, TRUE, FALSE))
 
 ### Exercise
 
-- Create a logical vector, called `college_aged`, which indicates which observations in `ages` are greater than or equal to 18 and less than or equal to 22. Be sure to use parentheses to separate out the two logical statements.
+- Create a logical vector called `college_aged` that indicates which observations in `ages` are greater than or equal to 18 and less than or equal to 22. (Use parentheses to separate out the two logical statements so they are more readable.)
 - Take the sum of the `college_aged` vector (using the `sum()` function) to determine how many people around 18-22 year old there are in the sample.
 
 ```{r generate-ages}
@@ -259,7 +264,7 @@ starwars |>
 ### Exercise
 
 
-Let's apply the `case_when` function to creating the an application `type` variable that combines race and gender. In particular, this variable should be `"WhiteMan"` for white male application and so on. We've included the first row to get you started:
+Let's apply the `case_when` function to creating an application `type` variable that combines race (in the data as "black" or "white") and gender (in the data as "man" or "woman"). For example, this variable should be `"White Man"` for a white male application, and so on for a total of four possible combinations. We've included the first row to get you started:
 
 ```{r casewhen, exercise = TRUE}
 resume <- resume |>
