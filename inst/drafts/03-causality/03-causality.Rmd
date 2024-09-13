@@ -147,7 +147,7 @@ Now let's calculate an average treatment effect. You can use `filter` to create 
 
 Use the following chain of manipulations combined by the pipe:
 
-- Use `group_by` and `summarize` to calculate the mean of the `call` variable by both `race` and `gender`. Call the variable containing the mean `call_mean`.
+- Use `group_by` and `summarize` to calculate the mean of the `call` variable by both `race` and `gender`. Call the variable containing the mean `call_mean`.  (`summarize` might produce a message about how it's re-grouped the data after summarization.  Don't worry about this for now!)
 - Pivot the resulting tibble to have `race` in the column names. 
 - Create a new variable called `ate` (average treatment effect) that is the difference between the callback means for black and white applications (these columns are called `black` and `white` after pivoting -- subtract `white` from `black`). 
 
