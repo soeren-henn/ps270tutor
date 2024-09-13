@@ -118,8 +118,8 @@ df |>
 
 Using the `count` and `pivot_wider` functions, create a cross tab of the `gender` and `call` variables in the resume data:
 
-- First we want to use the `count` function to make a long table with the number of people with each combination of `gender` and `call`.  (If you get confused, it might help to select all the code up to the end of the `count()` function and press "Run Code"!)
-- Next we want to use the `pivot_wider` function to reshape the table. To do so, let's draw the names for the new columns from variable `call` and values from `n`.
+- First we want to use the `count` function to make a long table with the number of people with each combination of `gender` and `call`.
+- Next we want to use the `pivot_wider` function to reshape the table. To do so, let's draw the names for the new columns from variable `call` and values from `n`.  (To remind yourself what the table looks like before this step, it might help to select all the code just up to the end of the `count()` function and press "Run Code"!)
 
 ```{r table, exercise = TRUE}
 resume |>
