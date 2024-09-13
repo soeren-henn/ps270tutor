@@ -58,10 +58,37 @@ Let's first explore the data a bit. It's stored as `resume`. Here's a look at it
 resume
 ```
 
+### Counting categories in a variable
+
+First, we need to know how to count how many of each category of a variable appear in a dataset. We could do this using the `group_by`, `summarize`, and `n` functions from the `dplyr` package.  However, `dplyr`'s `count` function "wraps" those three functions together, providing a handy and intuitive way to do them all at once.
+
+Consider a simple data frame with one variable, `name`:
+
+```{r}
+df <- tibble(
+  name = c("Kosuke", "Matt", "Kosuke", "Matt", "Soeren"),
+)
+df
+```
+
+We could use three functions to count how many times each instance of `name` appears...
+
+```{r}
+df |>
+  group_by(name) |>
+  summarize(n = n())
+```
+
+... or we could do the same thing more simply using `count`.
+
+```{r}
+df |>
+  count(name)
+```
+
 ### Creating a cross tab
 
-
-To help you analyze this data, you can use a cross tabulation. A cross tabulation (or contingency table) is a table that quickly summarizes categorical data. For instance, in the resume data, we have a `gender` variable that tells us whether or not the fictitious resume had a name typically associated with a man or a woman (we've changed the name of the variable from the textbook). 
+Another useful tool for analyzing data is a cross tabulation. A cross tabulation (or contingency table) is a table that quickly summarizes categorical data. For instance, in the resume data, we have a `gender` variable that tells us whether or not the fictitious resume had a name typically associated with a man or a woman (we've changed the name of the variable from the textbook). 
 
 To create a cross tab, we need to modify the output of a `group_by`/`summarize` combination where each row corresponds to a combination of the grouping variables. For a cross tab, we will have a table where rows correspond to one grouping variable and columns refer to the other. To do this, we'll need to use the `pivot_wider` function, which takes data that is "long" (each row is a combination of values) and converts to "wide" (where columns also correspond to one of the variables). Suppose we had this data:
 
