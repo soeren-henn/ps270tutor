@@ -193,6 +193,20 @@ We will also perform some algebra on logical vectors. When we do this, all `TRUE
 sum(c(TRUE, FALSE, TRUE, FALSE))
 ```
 
+### Vectorized functions
+
+R has the unusual but useful feature that many of its functions are *vectorized*.  When a vectorized function gets a vector as input, it acts on each element of the vector and returns the vector that results.  All of R's operators are vectorized:
+
+```{r}
+c(1, 2, 3, 4, 5) > 3
+```
+
+```{r}
+(c(1, 2, 3, 4, 5) > 3) & (c(1, 2, 3, 4, 5) < 5)
+```
+
+This can take some getting used to!  Feel free to stare at the results above for a while until you understand why they produce the results they do.
+
 ### Exercise
 
 - Create a logical vector called `college_aged` that indicates which observations in `ages` are greater than or equal to 18 and less than or equal to 22. (Use parentheses to separate out the two logical statements so they are more readable.)
