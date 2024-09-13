@@ -1,6 +1,6 @@
 Package: ps270tutor
 Type: Package
-Version: 202409.2.00.0003
+Version: 202409.3.00.0000
 Title: Learnr tutorials for PS270 at University of Wisconsin-Madison
 Description: A series of 'learnr' tutorials on basic data analysis to help students in PS270 at UW-M.
 Authors@R:
