@@ -39,11 +39,11 @@ star <- as_tibble(STAR)
 ### Small class size data
 
 
-In this chapter, you'll analyze data from the STAR project, which is a four-year randomized trial on the effectiveness of small class sizes on education performance. The `star` data frame as been loaded into your space so that you can play around with it a bit.
+In this chapter, you'll analyze data from the STAR project, which is a four-year randomized trial on the effectiveness of small class sizes on education performance. The `star` data frame (as well as the `tidyverse` package) has been loaded into this tutorial so that you can play around with it a bit.
 
 #### Exercises
 
-- Use the `str` function on the `star` to see what the data looks like. You can always use `head` function to view the first six rows of the data set.
+- Use the `str` function on the `star` to see what the structure of the data looks like. You can always use `head` function to view the first six rows of the data set.
 
 ```{r str-star, exercise = TRUE}
 
@@ -72,7 +72,7 @@ glimpse(star)
 grade_this_code()
 ```
 
-- Use the `dim_desc` function on the `star` to see what the dimensions of the data look like.
+- Use the `dim_desc` function on `star` to see a description of the dimensions of the data.
 
 ```{r dim_desc-star, exercise = TRUE}
 
@@ -104,7 +104,7 @@ grade_this_code()
 
 ### New summary functions
 
-We have been using the `mean()` function quite a bit to summarize a variable via the sample average/sample mean. This is one way to measure the center of the data. Another way to measure the center of the distribution of a variable is the **median**, which is defined as the middle value of the variable after ordering the values from smallest to largest. We can calculate it in R with the `median()` function that works very similarly `mean()`. We can measure spread via the **standard deviation** which can be calculated with the `sd()` function or the square of that value, called the **variance**, with the function `var()`. 
+We have been using the `mean()` function quite a bit to summarize a variable via the sample average/sample mean. This is one way to measure the center of the data. Another way to measure the center of the distribution of a variable is the **median**, which is defined as the middle value of the variable after ordering the values from smallest to largest. We can calculate it in R with the `median()` function that works very similarly `mean()`. We can measure spread via the **standard deviation**, which can be calculated with the `sd()` function.  We can also measure spread using the square of the standard deviation, called the **variance**, calculated with the function `var()`. 
 
 
 Use the template below to summarize the median and standard deviation of the 4th grade math score (`g4math`) by class type. Remember to remove missing values using the `na.rm = TRUE` argument just like with `mean()`. 
@@ -143,7 +143,7 @@ grade_this_code()
 
 You probably noticed that there were some `NA` values in the data when you used the `str` and `glimpse` functions. These are **missing values**, where the value for that unit on that variable is missing or unknown. These values pose problems when we are trying to calculate quantities of interest like means or medians because R doesn't know how to handle them. 
 
-The `drop_na` function looks at the data frame and removes all rows (observations) with at least one missing value. In other words, it only keeps the complete rows by deleting rows where any column (variable) is filled with a `NA` value. However, this also means that `drop_na` will cause *listwise deletion*, which gets rid of the entire row even when it contains important information in other columns. Thus, it is important to specify which columns to use to drop missing data.  
+The `drop_na` function looks at the data frame and removes all rows (observations) with at least one missing value. In other words, it only keeps the complete rows by deleting rows where any column (variable) is filled with an `NA` value. However, this also means that `drop_na` will cause *listwise deletion*, which gets rid of the entire row even when it contains important information in other columns. Thus, it is important to specify which columns to use to drop missing data.  
 
 #### Exercises
 - Use the `drop_na` function to drop the rows with missing values in variable `g4math`. 
@@ -169,7 +169,7 @@ NA > 50
 42 == NA
 ```
 
-Both of these return `NA` because they are saying we can't tell if the statement is true or not: the truth statement is unknown. This leads to head scratchers like this:
+Both of these return `NA` because they are saying we can't tell if the statement is true or not: the truth statement is unknown. This leads to head-scratchers like this:
 
 ```{r}
 NA == NA
@@ -203,7 +203,7 @@ grade_this_code()
 
 ### Adding lines and text to a plot
 
-We'll often want to add more information to a plot to make it even more readable. You can do that with geoms that add to the current plot, such as `geom_abline` and `annotate`.
+We've already learned several tools to work with basic plots. We'll often want to add more information to a plot to make it even more readable. You can do that with geoms that add to the current plot, such as `geom_abline` and `annotate`.
 
 - `geom_abline`: adds a line with specific slope and intercept
 - `geom_vline`: adds a vertical line
@@ -267,7 +267,7 @@ grade_this_code()
 
 ## Selecting random sample 
 
-We have seen how to select certain rows by their row number or by their value on a particular variable, including the top X on some variable. But what if we want to take a random sample of our data. Then we can use the `slice_sample(star, n = 10)`, which in this case will give a random sample of 10 rows of `star`. 
+We have seen how to select certain rows by their row number or by their value on a particular variable, including the top X on some variable. But what if we want to take a random sample of our data? Then we can use `slice_sample(star, n = 10)`, which in this case will give a random sample of 10 rows of `star`. 
 
 Use this function and `filter` to take a random sample of 5 students who scored over 700 on their `g4math`. 
 
