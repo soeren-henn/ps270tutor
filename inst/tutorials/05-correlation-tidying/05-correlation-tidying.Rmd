@@ -35,7 +35,7 @@ library(gapminder)
 
 ## Correlation and scaling
 
-To illustrate the basics of correlation, we'll focus again on the `gapminder` data which has a few continuous variables
+To illustrate the basics of correlation, we'll focus again on the `gapminder` data which has a few continuous variables. (We've pre-loaded the `gapminder` package for this tutorial, as well as `ps270data` and `tidyverse`.)
 
 ```{r}
 gapminder
@@ -89,7 +89,7 @@ grade_this_code()
 
 ### Z-scores
 
-Correlations are calculated using z-scores of each variable. A z-score of a variable is a transformation that puts all variables on a common scale. This transformation subtracts off the mean of the variable from each unit and then divides by the standard deviation of the variable. We could do this transformation with:
+Correlations are calculated using z-scores of each variable. A z-score of a variable is a transformation that puts all variables on a common scale. This transformation subtracts out the mean of the variable from each unit and then divides by the standard deviation of the variable. We could do this transformation with:
 
 ```{r eval=FALSE}
 mydata |>
@@ -241,7 +241,7 @@ df_1 |>
 
 It will preserve all rows that are in the data set in `df_1` even if they are not present in `df_2`. The variables from the second data set will be missing for any rows that are in the first data but not in the second. 
 
-Let's try to this with the gapminder and mortality data. We've set it up so that the mortality data has already been pivoted. Pipe the `mortality_tidy` to `left_join` and pass it the `gapminder` data to see what merge looks like. Note that the `gapminder` data is only measured every five years. 
+Let's try to this with the gapminder and mortality data. We've set it up so that the mortality data has already been pivoted. Pipe the `mortality_tidy` data set to `left_join` and pass the `gapminder` data set to the function  to see what merge looks like. Note that the `gapminder` data is only measured every five years. 
 
 
 ```{r left-join, exercise = TRUE}
