@@ -118,7 +118,7 @@ Inside the curly braces, we have the body of the loop which calculates median of
 
 ### Loop practice
 
-Let's begin by coding the creation an empty vector to store the computational output from a loop. You can think of this as a bookshelf with spots for the result of each iteration of the loop. We're going to switch data sets and focus on iterating on the columns of the `gapminder` data, which we have loaded into the session. We can perform this task using the `rep()` function which creates a vector by repeating whatever value is given to it. For instance, we can run:
+Let's begin by coding the creation of an empty vector to store the computational output from a loop. You can think of this as a bookshelf with spots for the result of each iteration of the loop. We're going to switch data sets and focus on iterating on the columns of the `gapminder` data, which we have loaded into the session. We can perform this task using the `rep()` function which creates a vector by repeating whatever value is given to it. For instance, we can run:
 
 ```{r}
 rep(10, times = 5)
