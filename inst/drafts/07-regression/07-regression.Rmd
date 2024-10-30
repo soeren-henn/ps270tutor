@@ -85,7 +85,7 @@ gapminder |>
   slice_sample(n = 5)
 ```
 
-Now try this for yourself. Write code that will randomly draw 10 rows from the `gapminder` data. Try running the code multiple times to see how the output changes with each sample. 
+Now try this for yourself. Write code that will randomly draw 10 rows from the `gapminder` data. Try running the code multiple times to see how the output changes with each sample. (Note that the tutorial has already loaded the `dplyr` package.) 
 
 ```{r sample, exercise = TRUE}
 
@@ -120,7 +120,7 @@ grade_this_code()
 
 ### Repeated sampling using the `infer` package
 
-The `infer` package provides tools for doing repeated sampling that is useful when we are learning about sampling. The function `infer::rep_slice_sample()` will sample the data multiple times and bind the samples together with a new column that indicates which replicate the draws are from. For instance, let's take 5 samples of size n=2 from the `gapminder` data. 
+The `infer` package (which this tutorial has pre-loaded) provides tools for doing repeated sampling that is useful when we are learning about sampling. The function `infer::rep_slice_sample()` will sample the data multiple times and bind the samples together with a new column that indicates which replicate the draws are from. For instance, let's take 5 samples of size n=2 from the `gapminder` data. 
 
 ```{r}
 gapminder |>
