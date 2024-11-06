@@ -38,7 +38,7 @@ tut_reptitle <- "PS 270 Tutorial 8: Output Report"
 
 ### Using `infer`
 
-The `infer` package is a package that provides a unified interface for statistical inference tasks like calculating confidence intervals or performing hypothesis tests. The package comes with a sample of 500 entries from the General Social Survey (GSS), a long-running survey about American society and opinions. This data is loaded into your environment as `gss`. 
+The `infer` package is a package that provides a unified interface for statistical inference tasks like calculating confidence intervals or performing hypothesis tests. The package comes with a sample of 500 entries from the General Social Survey (GSS), a long-running survey about American society and opinions. `infer` has been loaded into your environment, and the GSS data has been loaded as `gss`. 
 
 The first step in using `infer` is to pass the data to the `specify()` function to tell `infer` what your dependent and independent variables are. If we are just calculating the mean or proportion of one variable, we just have a dependent variable. For instance, if we wanted to specify the `gss` variable `age` as our response variable, we would type:
 
@@ -109,7 +109,7 @@ gss |>
 
 The `stat` argument specifies what type of statistics we are calculating and can take on values like `"mean"`, `"prop"`, `"diff in means"`, and so on. Here we are interested in the mean. 
 
-Now, you try to perform these calculations for the `hours` variable:
+Now, you try to calculate the mean for each replicate of the `hours` variable:
 
 ```{r calculate, exercise = TRUE}
 gss |>
