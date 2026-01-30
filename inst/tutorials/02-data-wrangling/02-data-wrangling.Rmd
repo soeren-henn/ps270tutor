@@ -283,7 +283,7 @@ gradethis::grade_this_code()
 
 ## Mutating variables
 
-Sometimes we need to create new variables that are transformation or mutations of existing variables. This is where the `mutate()` function comes in. This allows us to create new variables based on existing ones with the following syntax:
+Sometimes we need to create new variables that are transformations or mutations of existing variables. This is where the `mutate()` function comes in. This allows us to create new variables based on existing ones with the following syntax:
 
 ```{r eval = FALSE}
 mydata |>
