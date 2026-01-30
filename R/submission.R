@@ -25,10 +25,15 @@ submission_server <- function(input, output) {
   # Evaluate in parent frame to get input, output, and session
   local({
     build_report <- function(file) {
+      # Make path more likely to be read by renderer
+      # File doesn't exist yet so dir needs cleaning separately
+      file <- file.path(normalizePath(dirname(file)), basename(file))
+
       # Copy the report file to a temporary directory before processing it, in
       # case we don't have write permissions to the current working dir (which
       # can happen when deployed).
-      tempReport <- file.path(tempdir(), "tutorial-report.Rmd")
+      write_dir <- normalizePath(tempdir())
+      tempReport <- file.path(write_dir, "tutorial-report.Rmd")
       tut_rep_path <- file.path(path.package("ps270tutor"),
                                 "tutorials",
                                 "tutorial-report.Rmd")
