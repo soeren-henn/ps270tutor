@@ -43,7 +43,7 @@ In this chapter, you'll analyze data from the STAR project, which is a four-year
 
 #### Exercises
 
-- Use the `str` function on the `star` to see what the structure of the data looks like. You can always use `head` function to view the first six rows of the data set.
+- Use the `str` function on the `star` to see what the structure of the data looks like. You can always use the `head` function to view the first six rows of the data set.
 
 ```{r str-star, exercise = TRUE}
 
@@ -169,7 +169,7 @@ NA > 50
 42 == NA
 ```
 
-Both of these return `NA` because they are saying we can't tell if the statement is true or not: the truth statement is unknown. This leads to head-scratchers like this:
+Both of these return `NA` because they are saying we can't tell if the statement is true or not: the truth of the statement is unknown. This leads to head-scratchers like this:
 
 ```{r}
 NA == NA
